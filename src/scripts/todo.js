@@ -19,7 +19,7 @@ class Todo {
             date: this.date,
             priority: this.priority
         }
-        
+
         allProjects.push(this.todo);
         Todo.assignTodoList(this.todo);
 

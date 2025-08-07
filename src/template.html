@@ -7,7 +7,49 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="sidebar"></div>
+    <div id="sidebar">
+        <div id="page-name">Do-it</div>
+        <div id="others">
+            <div id="todo-lists-container">
+                <div class="todo-list">
+                    <div class="header-and-count">
+                        <div id="tasks-header">Tasks</div>
+                        <div id="total-tasks"></div>
+                    </div>
+                </div>
+                <div class="todo-list">
+                    <img class="images" src="assets/images/projects.png" alt="projects image">
+                    <div class="header-and-count">
+                        <button class="todo-header">Projects</button>
+                        <div class="todo-count"></div>
+                    </div>
+                    
+                </div>
+                <div class="todo-list">
+                    <img class="images" src="assets/images/today.png" alt="today image">
+                    <div class="header-and-count">
+                        <button class="todo-header">Today</button>
+                        <div class="todo-count"></div>
+                    </div>
+                </div>
+                <div class="todo-list">
+                    <img class="images" src="assets/images/upcoming.png" alt="upcoming image">
+                    <div class="header-and-count">
+                        <button class="todo-header">Upcoming</button>
+                        <div class="todo-count"></div>
+                    </div>
+                </div>
+                <div class="todo-list">
+                    <img class="images" src="assets/images/important.png" alt="important image">
+                    <div class="header-and-count">
+                        <button class="todo-header">Important</button>
+                        <div class="todo-count"></div>
+                    </div>
+                </div>
+            <button id="add-todo"><p>+</p></button>
+        </div>
+        </div>
+    </div> 
     <div id="main"></div>
     <script type="module" src="scripts/todo.js"></script>
 </body>
