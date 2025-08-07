@@ -1,5 +1,5 @@
 {
-  "name": "webpack-temp",
+  "name": "todo-list",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,9 +7,9 @@
     "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Miachi Solomon",
   "license": "ISC",
-  "description": "",
+  "description": "This is a todo-list to practice my knowledge on JavaScript, NPM and webpack.",
   "devDependencies": {
     "webpack": "^5.101.0",
     "webpack-cli": "^6.0.1",
