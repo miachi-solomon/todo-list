@@ -97,20 +97,28 @@ body {
     text-align: center;
     border: none;
     border-radius: 15px;
-    height: 45px;
-    width: 60px;
+    padding: 5px 17px;
+    text-align: center;
+    font-size: 30px;
     background-color: var(--color-accent);
-    transition: width 0.3s;
+    transition: padding 0.2s;
 }
 
-#add-todo p {
-    margin: 0;
-    text-align: center;
-    font-size: 40px;
+#add-todo:hover {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 button {
     cursor: pointer;
+}
+
+p {
+    width: 200px;
+}
+
+#description {
+    height: 100px;
 }
 
 #main {
