@@ -1,85 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Do-it</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="sidebar">
-        <div id="page-name">Do-it</div>
-        <div id="others">
-            <div id="todo-lists-container">
-                <div class="todo-list">
-                    <div class="header-and-count">
-                        <div id="tasks-header">Tasks</div>
-                        <div id="total-tasks"></div>
-                    </div>
-                </div>
-                <div class="todo-list">
-                    <img class="images" src="assets/images/projects.png" alt="projects image">
-                    <div class="header-and-count">
-                        <button class="todo-header">Projects</button>
-                        <div class="todo-count"></div>
-                    </div>
-                    
-                </div>
-                <div class="todo-list">
-                    <img class="images" src="assets/images/today.png" alt="today image">
-                    <div class="header-and-count">
-                        <button class="todo-header">Today</button>
-                        <div class="todo-count"></div>
-                    </div>
-                </div>
-                <div class="todo-list">
-                    <img class="images" src="assets/images/upcoming.png" alt="upcoming image">
-                    <div class="header-and-count">
-                        <button class="todo-header">Upcoming</button>
-                        <div class="todo-count"></div>
-                    </div>
-                </div>
-                <div class="todo-list">
-                    <img class="images" src="assets/images/important.png" alt="important image">
-                    <div class="header-and-count">
-                        <button class="todo-header">Important</button>
-                        <div class="todo-count"></div>
-                    </div>
-                </div>
-            <button id="add-todo">+</button>
+      <div id="page-name">Do-it</div>
+      <div id="others">
+        <div id="todo-lists-container">
+          <div class="todo-list">
+            <div class="header-and-count">
+              <div id="tasks-header">Tasks</div>
+              <div id="total-tasks"></div>
+            </div>
+          </div>
+          <div class="todo-list">
+            <img
+              class="images"
+              src="assets/images/projects.png"
+              alt="projects image"
+            />
+            <div class="header-and-count">
+              <button class="todo-header">Projects</button>
+              <div class="todo-count"></div>
+            </div>
+          </div>
+          <div class="todo-list">
+            <img
+              class="images"
+              src="assets/images/today.png"
+              alt="today image"
+            />
+            <div class="header-and-count">
+              <button class="todo-header">Today</button>
+              <div class="todo-count"></div>
+            </div>
+          </div>
+          <div class="todo-list">
+            <img
+              class="images"
+              src="assets/images/upcoming.png"
+              alt="upcoming image"
+            />
+            <div class="header-and-count">
+              <button class="todo-header">Upcoming</button>
+              <div class="todo-count"></div>
+            </div>
+          </div>
+          <div class="todo-list">
+            <img
+              class="images"
+              src="assets/images/important.png"
+              alt="important image"
+            />
+            <div class="header-and-count">
+              <button class="todo-header">Important</button>
+              <div class="todo-count"></div>
+            </div>
+          </div>
+          <button id="add-todo">+</button>
         </div>
-        </div>
-    </div> 
-    <div id="main">
-        <dialog>
-            <form>
-                <fieldset>
-                    <legend>New Todo:</legend>
-                    <p>
-                        <label for="title">Title:</label>
-                        <input type="text" id="title" name="todo-title">
-                    </p>
-                    <p>
-                        <label for="description">Description:</label>
-                        <textarea id="description" name="todo-description"></textarea>
-                    </p>
-                    <p>
-                        <label for="due-date">Date:</label>
-                        <input type="date" id="due-date" name="todo-date">
-                    </p>
-                    <p>
-                        <label for="priority">Priority:</label>
-                        <select name="todo-priority" id="priority">
-                            <option value="---">---</option>
-                            <option value="Low">Low</option>
-                            <option value="High">High</option>
-                        </select>
-                    </p>
-                    <button id="new-todo" type="button">Add</button>
-                    <input type="reset" value="Reset" id="reset">
-                    <button id="close-dialog" type="button">Close</button>                   
-                </fieldset>
-            </form>
-        </dialog>
+      </div>
     </div>
-</body>
+    <div id="main">
+      <dialog>
+        <form>
+          <fieldset>
+            <legend>New Todo:</legend>
+            <p>
+              <label for="title">Title:</label>
+              <input type="text" id="title" name="todo-title" />
+            </p>
+            <p>
+              <label for="description">Description:</label>
+              <textarea id="description" name="todo-description"></textarea>
+            </p>
+            <p>
+              <label for="due-date">Date:</label>
+              <input type="date" id="due-date" name="todo-date" />
+            </p>
+            <p>
+              <label for="priority">Priority:</label>
+              <select name="todo-priority" id="priority">
+                <option value="---">---</option>
+                <option value="Low">Low</option>
+                <option value="High">High</option>
+              </select>
+            </p>
+            <button id="new-todo" type="button">Add</button>
+            <input type="reset" value="Reset" id="reset" />
+            <button id="close-dialog" type="button">Close</button>
+          </fieldset>
+        </form>
+      </dialog>
+    </div>
+  </body>
 </html>

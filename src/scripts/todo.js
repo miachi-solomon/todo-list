@@ -13,7 +13,7 @@ export class Todo {
             description: this.description,
             date: this.date,
             priority: this.priority
-        }
+        };
         return this.todo;
     }
 }
