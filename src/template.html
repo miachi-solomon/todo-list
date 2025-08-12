@@ -23,7 +23,7 @@
               alt="projects image"
             />
             <div class="header-and-count">
-              <button class="todo-header">Projects</button>
+              <button class="todo-header" id="projects">Projects</button>
               <div class="todo-count"></div>
             </div>
           </div>
@@ -34,7 +34,7 @@
               alt="today image"
             />
             <div class="header-and-count">
-              <button class="todo-header">Today</button>
+              <button class="todo-header" id="today">Today</button>
               <div class="todo-count"></div>
             </div>
           </div>
@@ -45,7 +45,7 @@
               alt="upcoming image"
             />
             <div class="header-and-count">
-              <button class="todo-header">Upcoming</button>
+              <button class="todo-header" id="upcoming">Upcoming</button>
               <div class="todo-count"></div>
             </div>
           </div>
@@ -56,7 +56,7 @@
               alt="important image"
             />
             <div class="header-and-count">
-              <button class="todo-header">Important</button>
+              <button class="todo-header" id="important">Important</button>
               <div class="todo-count"></div>
             </div>
           </div>
@@ -69,19 +69,19 @@
         <form>
           <fieldset>
             <legend>New Todo:</legend>
-            <p>
+            <p class="form-p">
               <label for="title">Title:</label>
               <input type="text" id="title" name="todo-title" />
             </p>
-            <p>
+            <p class="form-p">
               <label for="description">Description:</label>
               <textarea id="description" name="todo-description"></textarea>
             </p>
-            <p>
+            <p class="form-p">
               <label for="due-date">Date:</label>
               <input type="date" id="due-date" name="todo-date" />
             </p>
-            <p>
+            <p class="form-p">
               <label for="priority">Priority:</label>
               <select name="todo-priority" id="priority">
                 <option value="---">---</option>
@@ -95,6 +95,7 @@
           </fieldset>
         </form>
       </dialog>
+      <div id="container"></div>
     </div>
   </body>
 </html>
