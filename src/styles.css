@@ -22,13 +22,13 @@ body {
 
 #sidebar {
   background-color: var(--color-bg-sidebar);
-  width: 343px;
+  width: 325px;
   position: relative;
 }
 
 #others {
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 35px;
 }
 
 #page-name {
@@ -53,6 +53,11 @@ body {
   height: 25px;
 }
 
+.logo {
+  height: 184px;
+  width: 184px;
+}
+
 #tasks-header {
   font-weight: bold;
   font-size: 20px;
@@ -60,10 +65,10 @@ body {
 }
 
 #total-tasks {
-  padding: 3px;
+  padding: 10px;
   background-color: var(--color-badge);
   color: var(--color-text-light);
-  border-radius: 50%;
+  border-radius: 5px;
   visibility: hidden;
 }
 
@@ -71,6 +76,11 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.todo-count {
+  color: var(--color-text-light);
+  font-size: 15px;
 }
 
 .header-and-count {
@@ -167,10 +177,7 @@ h1 {
 .js-description {
   font-size: 20px;
   color: var(--color-text-muted);
-  text-align: left;
-  width: 632px;
-  display: flex;
-  justify-self: end;
+  text-align: center;
 }
 
 .js-completed {
@@ -184,11 +191,22 @@ h1 {
 }
 
 .js-checkbox {
-  width: 27px;
-  height: 27px;
+  height: 30px;
+  background-color: var(--color-badge);
+  color: var(--color-text-light);
+  font-size: 20px;
+  border: none;
   border-radius: 5px;
   margin: 0;
   margin-top: 10px;
   margin-right: 20px;
   cursor: pointer;
+}
+
+.margin-js-text {
+  margin-left: 158px;
+}
+
+.flex-container {
+  display: flex;
 }

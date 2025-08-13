@@ -7,6 +7,9 @@ import {
 } from './scripts/DOM/button';
 import { newTodo, newTodoHandler } from './scripts/DOM/new-todo';
 import './scripts/DOM/display-todo';
+import './scripts/DOM/assignTodo';
+import { allProjects } from './scripts/todo/todo-lists';
+import { displayToDOM } from './scripts/DOM/display-todo';
 
 addBtn.addEventListener('mouseover', () => (addBtn.textContent = '+ Add'));
 
@@ -17,3 +20,6 @@ addBtn.addEventListener('click', addBtnHandler);
 closeBtn.addEventListener('click', closeBtnHandler);
 
 newTodo.addEventListener('click', newTodoHandler);
+
+document.querySelector('#current-header').textContent = 'Projects';
+displayToDOM(allProjects);

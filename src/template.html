@@ -24,7 +24,7 @@
             />
             <div class="header-and-count">
               <button class="todo-header" id="projects">Projects</button>
-              <div class="todo-count"></div>
+              <div class="todo-count" id="project-count"></div>
             </div>
           </div>
           <div class="todo-list">
@@ -35,7 +35,7 @@
             />
             <div class="header-and-count">
               <button class="todo-header" id="today">Today</button>
-              <div class="todo-count"></div>
+              <div class="todo-count" id="today-count"></div>
             </div>
           </div>
           <div class="todo-list">
@@ -46,7 +46,7 @@
             />
             <div class="header-and-count">
               <button class="todo-header" id="upcoming">Upcoming</button>
-              <div class="todo-count"></div>
+              <div class="todo-count" id="upcoming-count"></div>
             </div>
           </div>
           <div class="todo-list">
@@ -57,7 +57,7 @@
             />
             <div class="header-and-count">
               <button class="todo-header" id="important">Important</button>
-              <div class="todo-count"></div>
+              <div class="todo-count" id="important-count"></div>
             </div>
           </div>
           <button id="add-todo">+</button>
@@ -95,7 +95,9 @@
           </fieldset>
         </form>
       </dialog>
-      <div id="container"></div>
+      <div id="container">
+        <h1 id="current-header"></h1>
+      </div>
     </div>
   </body>
 </html>
