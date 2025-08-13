@@ -11,7 +11,7 @@ import {
   totalTodoCount,
   todoListArray,
 } from './assignTodoVar';
-// import { displayToDOM } from './display-todo';
+import { displayToDOM } from './display-todo';
 
 function countChanger(counter) {
   if (counter.textContent >= 100) {
@@ -28,7 +28,8 @@ Array.from(todoCounts).map((todoCount) => {
 // Show the exact amount of todo for each todo-list
 todoListArray.forEach((todoObj) => {
   todoObj.name.addEventListener('click', (e) => {
-    if (!todoObj.count.textContent) {
+    displayToDOM(todoObj.list);
+    if (todoObj.count.textContent == 0) {
       header.textContent = e.target.textContent;
     } else {
       header.textContent =

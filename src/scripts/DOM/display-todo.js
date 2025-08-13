@@ -3,10 +3,9 @@ import importantLogo from '../../assets/images/Group-5.jpg';
 let container = document.querySelector('#container');
 let HTMLContent = '';
 
-export function displayToDOM(arr) {
-  arr.forEach((todo) => {
-    if (todo.priority == 'High') {
-      HTMLContent = `
+function createHTMl(todo) {
+  if (todo.priority == 'High') {
+    HTMLContent = `
     <div class="js">
         <div class="js-contents">
           <button class="js-checkbox">Delete</button>
@@ -23,8 +22,8 @@ export function displayToDOM(arr) {
         </div>
       </div>
     `;
-    } else {
-      HTMLContent = `
+  } else {
+    HTMLContent = `
     <div class="js">
         <div class="js-contents">
           <button class="js-checkbox">Delete</button>
@@ -38,7 +37,13 @@ export function displayToDOM(arr) {
         </div>
       </div>
     `;
-    }
-    container.insertAdjacentHTML('beforeend', HTMLContent);
+  }
+  return HTMLContent;
+}
+
+export function displayToDOM(array) {
+  container.innerHTML = '';
+  array.forEach((obj) => {
+    container.insertAdjacentHTML('beforeend', createHTMl(obj));
   });
 }
