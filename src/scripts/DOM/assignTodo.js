@@ -25,11 +25,11 @@ Array.from(todoCounts).map((todoCount) => {
   countChanger(todoCount);
 });
 
-// Show the exact amount of todo for each todo-list
+// Show the exact amount of todo for each todo-list and display the todo
 todoListArray.forEach((todoObj) => {
   todoObj.name.addEventListener('click', (e) => {
     displayToDOM(todoObj.list);
-    if (todoObj.count.textContent == 0) {
+    if (todoObj.count.textContent <= 0) {
       header.textContent = e.target.textContent;
     } else {
       header.textContent =
@@ -62,7 +62,9 @@ function updateTodoCount() {
   if (hasChanged) {
     todoListArray.forEach((todoObj) => {
       todoObj.count.textContent = todoObj.list.length;
-      sum += todoObj.list.length;
+      if (todoObj.count.textContent >= 0) {
+        sum++;
+      }
     });
     totalTodoCount.textContent = sum;
     document.getElementById('total-tasks').style.visibility = 'visible';
