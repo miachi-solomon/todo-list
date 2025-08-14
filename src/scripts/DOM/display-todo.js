@@ -4,7 +4,6 @@ import { updateTodoCount } from './assignTodo';
 
 let container = document.querySelector('#container');
 let HTMLContent = '';
-let deleted = false;
 
 function createHTMl(todo) {
   if (todo.priority == 'High') {
@@ -55,7 +54,7 @@ export function displayToDOM(array) {
   array.forEach((obj) => {
     container.insertAdjacentHTML('beforeend', createHTMl(obj));
 
-    const objElement = document.querySelector(`[data-id="${obj.title}"]`);
+    const objElement = container.querySelector(`[data-id="${obj.title}"]`);
     const deleteBtn = objElement.querySelector('button');
 
     deleteBtn.addEventListener('click', () => {
@@ -69,8 +68,7 @@ export function displayToDOM(array) {
         });
       });
 
-      deleted = true;
-      updateTodoCount(deleted);
+      updateTodoCount();
     });
   });
 }

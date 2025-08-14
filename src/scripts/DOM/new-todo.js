@@ -20,11 +20,13 @@ export function newTodoHandler() {
     priority: priority.value,
   });
   assignTodoList(userTodo);
+
   todoListArray.forEach((todoObj) => {
     if (todoObj.name.textContent == header.textContent) {
       displayToDOM(todoObj.list);
     }
   });
+
   dialog.close();
   resetBtn.click();
 }

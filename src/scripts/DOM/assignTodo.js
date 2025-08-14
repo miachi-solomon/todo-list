@@ -13,9 +13,6 @@ import {
 } from './assignTodoVar';
 import { displayToDOM } from './display-todo';
 
-let hasChanged;
-let sum = 0;
-
 function countChanger(counter) {
   if (counter.textContent >= 100) {
     counter.textContent = '99+';
@@ -43,25 +40,24 @@ export function assignTodoList(userTodo) {
     upcomingTodos.push(userTodo);
   }
 
-  hasChanged = true;
-  updateTodoCount(hasChanged);
+  updateTodoCount();
 }
 
-export function updateTodoCount(variable) {
-  if (variable) {
-    todoListArray.forEach((todoObj) => {
-      todoObj.count.textContent = todoObj.list.length;
-      if (todoObj.count.textContent > 0) {
-        sum++;
-      }
-    });
-    totalTodoCount.textContent = sum;
-    totalTodoCount.style.visibility = 'visible';
-  }
+export function updateTodoCount() {
+  let todoObjCount = 0;
+
+  todoListArray.forEach((todoObj) => {
+    todoObj.count.textContent = todoObj.list.length;
+    let count = parseInt(todoObj.count.textContent);
+    todoObjCount += count;
+  });
+
+  totalTodoCount.textContent = todoObjCount;
+  totalTodoCount.style.visibility = 'visible';
 }
 
+// If the count is 100, change the count to 99+
 countChanger(totalTodoCount);
-
 Array.from(todoCounts).map((todoCount) => countChanger(todoCount));
 
 // Show the exact amount of todo for each todo-list and display the todo
