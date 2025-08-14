@@ -20,7 +20,6 @@ export function newTodoHandler() {
     priority: priority.value,
   });
   assignTodoList(userTodo);
-  // console.log(header.textContent);
   todoListArray.forEach((todoObj) => {
     if (todoObj.name.textContent == header.textContent) {
       displayToDOM(todoObj.list);

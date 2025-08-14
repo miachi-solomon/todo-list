@@ -13,33 +13,23 @@ import {
 } from './assignTodoVar';
 import { displayToDOM } from './display-todo';
 
+let hasChanged;
+let sum = 0;
+
 function countChanger(counter) {
   if (counter.textContent >= 100) {
     counter.textContent = '99+';
   }
 }
 
-countChanger(totalTodoCount);
-
-Array.from(todoCounts).map((todoCount) => {
-  countChanger(todoCount);
-});
-
-// Show the exact amount of todo for each todo-list and display the todo
-todoListArray.forEach((todoObj) => {
-  todoObj.name.addEventListener('click', (e) => {
-    displayToDOM(todoObj.list);
-    if (todoObj.count.textContent <= 0) {
-      header.textContent = e.target.textContent;
-    } else {
-      header.textContent =
-        e.target.textContent + ` (${todoObj.count.textContent})`;
-    }
-  });
-});
-
-let hasChanged;
-let sum = 0;
+function displayTodoListCount(todoObj, e) {
+  if (todoObj.count.textContent <= 0) {
+    header.textContent = e.target.textContent;
+  } else {
+    header.textContent =
+      e.target.textContent + ` (${todoObj.count.textContent})`;
+  }
+}
 
 export function assignTodoList(userTodo) {
   allProjects.push(userTodo);
@@ -53,20 +43,31 @@ export function assignTodoList(userTodo) {
     upcomingTodos.push(userTodo);
   }
 
-  // Update the todo-count as it changes
   hasChanged = true;
-  updateTodoCount();
+  updateTodoCount(hasChanged);
 }
 
-function updateTodoCount() {
-  if (hasChanged) {
+export function updateTodoCount(variable) {
+  if (variable) {
     todoListArray.forEach((todoObj) => {
       todoObj.count.textContent = todoObj.list.length;
-      if (todoObj.count.textContent >= 0) {
+      if (todoObj.count.textContent > 0) {
         sum++;
       }
     });
     totalTodoCount.textContent = sum;
-    document.getElementById('total-tasks').style.visibility = 'visible';
+    totalTodoCount.style.visibility = 'visible';
   }
 }
+
+countChanger(totalTodoCount);
+
+Array.from(todoCounts).map((todoCount) => countChanger(todoCount));
+
+// Show the exact amount of todo for each todo-list and display the todo
+todoListArray.forEach((todoObj) => {
+  todoObj.name.addEventListener('click', (e) => {
+    displayToDOM(todoObj.list);
+    displayTodoListCount(todoObj, e);
+  });
+});

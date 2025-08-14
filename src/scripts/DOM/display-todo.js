@@ -1,12 +1,15 @@
 import importantLogo from '../../assets/images/Group-5.jpg';
+import { todoListArray } from './assignTodoVar';
+import { updateTodoCount } from './assignTodo';
 
 let container = document.querySelector('#container');
 let HTMLContent = '';
+let deleted = false;
 
 function createHTMl(todo) {
   if (todo.priority == 'High') {
     HTMLContent = `
-    <div class="js">
+    <div class="js" data-id=${todo.title}>
         <div class="js-contents">
           <button class="js-checkbox">Delete</button>
           <div class="js-big-box">
@@ -24,7 +27,7 @@ function createHTMl(todo) {
     `;
   } else {
     HTMLContent = `
-    <div class="js">
+    <div class="js" data-id=${todo.title}>
         <div class="js-contents">
           <button class="js-checkbox">Delete</button>
           <div class="js-big-box">
@@ -41,9 +44,33 @@ function createHTMl(todo) {
   return HTMLContent;
 }
 
+function removeFromArray(array, object) {
+  const i = array.indexOf(object);
+  array.splice(i, 1);
+}
+
 export function displayToDOM(array) {
   container.innerHTML = '';
+
   array.forEach((obj) => {
     container.insertAdjacentHTML('beforeend', createHTMl(obj));
+
+    const objElement = document.querySelector(`[data-id="${obj.title}"]`);
+    const deleteBtn = objElement.querySelector('button');
+
+    deleteBtn.addEventListener('click', () => {
+      objElement.remove();
+
+      todoListArray.forEach((todoListObj) => {
+        todoListObj.list.forEach((todo) => {
+          if (todo == obj) {
+            removeFromArray(todoListObj.list, todo);
+          }
+        });
+      });
+
+      deleted = true;
+      updateTodoCount(deleted);
+    });
   });
 }
