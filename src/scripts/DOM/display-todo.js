@@ -8,7 +8,7 @@ let HTMLContent = '';
 function createHTMl(todo) {
   if (todo.priority == 'High') {
     HTMLContent = `
-    <div class="js" data-id=${todo.title}>
+    <div class="js" data-id=${todo.id}>
         <div class="js-contents">
           <button class="js-checkbox">Delete</button>
           <div class="js-big-box">
@@ -26,7 +26,7 @@ function createHTMl(todo) {
     `;
   } else {
     HTMLContent = `
-    <div class="js" data-id=${todo.title}>
+    <div class="js" data-id=${todo.id}>
         <div class="js-contents">
           <button class="js-checkbox">Delete</button>
           <div class="js-big-box">
@@ -54,7 +54,7 @@ export function displayToDOM(array) {
   array.forEach((obj) => {
     container.insertAdjacentHTML('beforeend', createHTMl(obj));
 
-    const objElement = container.querySelector(`[data-id="${obj.title}"]`);
+    const objElement = document.querySelector(`[data-id="${obj.id}"]`);
     const deleteBtn = objElement.querySelector('button');
 
     deleteBtn.addEventListener('click', () => {
@@ -64,11 +64,10 @@ export function displayToDOM(array) {
         todoListObj.list.forEach((todo) => {
           if (todo == obj) {
             removeFromArray(todoListObj.list, todo);
+            updateTodoCount();
           }
         });
       });
-
-      updateTodoCount();
     });
   });
 }

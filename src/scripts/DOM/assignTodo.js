@@ -19,13 +19,8 @@ function countChanger(counter) {
   }
 }
 
-function displayTodoListCount(todoObj, e) {
-  if (todoObj.count.textContent <= 0) {
-    header.textContent = e.target.textContent;
-  } else {
-    header.textContent =
-      e.target.textContent + ` (${todoObj.count.textContent})`;
-  }
+function displayTodoListCount(e) {
+  header.textContent = e.target.textContent;
 }
 
 export function assignTodoList(userTodo) {
@@ -64,6 +59,6 @@ Array.from(todoCounts).map((todoCount) => countChanger(todoCount));
 todoListArray.forEach((todoObj) => {
   todoObj.name.addEventListener('click', (e) => {
     displayToDOM(todoObj.list);
-    displayTodoListCount(todoObj, e);
+    displayTodoListCount(e);
   });
 });

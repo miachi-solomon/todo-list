@@ -1,0 +1,7 @@
+function saveToLocalStorage() {
+  // ...
+}
+
+function getFromLocalStorage() {
+  // ..
+}
