@@ -8,8 +8,9 @@ import {
 import { newTodo, newTodoHandler } from './scripts/DOM/new-todo';
 import './scripts/DOM/display-todo';
 import './scripts/DOM/assignTodo';
-import { allProjects } from './scripts/todo/todo-lists';
 import { displayToDOM } from './scripts/DOM/display-todo';
+import { updateTodoCount } from './scripts/DOM/assignTodo';
+import { getFromLocalStorage } from './scripts/DOM/localStorage';
 
 addBtn.addEventListener('mouseover', () => (addBtn.textContent = '+ Add'));
 
@@ -22,4 +23,5 @@ closeBtn.addEventListener('click', closeBtnHandler);
 newTodo.addEventListener('click', newTodoHandler);
 
 document.querySelector('#current-header').textContent = 'Projects';
-displayToDOM(allProjects);
+displayToDOM(getFromLocalStorage('projects'));
+updateTodoCount();

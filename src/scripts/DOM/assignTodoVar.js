@@ -1,9 +1,4 @@
-import {
-  allProjects,
-  todayTodos,
-  upcomingTodos,
-  importantTodos,
-} from '../todo/todo-lists.js';
+import { getFromLocalStorage } from './localStorage.js';
 
 let header = document.querySelector('#current-header');
 let projectsCount = document.querySelector('#project-count');
@@ -19,10 +14,30 @@ const todoCounts = document.querySelectorAll('.todo-count');
 const totalTodoCount = document.querySelector('#total-tasks');
 
 const todoListArray = [
-  { name: projects, list: allProjects, count: projectsCount },
-  { name: today, list: todayTodos, count: todayCount },
-  { name: upcoming, list: upcomingTodos, count: upcomingCount },
-  { name: important, list: importantTodos, count: importantCount },
+  {
+    name: projects,
+    list: getFromLocalStorage('projects'),
+    count: projectsCount,
+    store: 'projects',
+  },
+  {
+    name: today,
+    list: getFromLocalStorage('today'),
+    count: todayCount,
+    store: 'today',
+  },
+  {
+    name: upcoming,
+    list: getFromLocalStorage('upcoming'),
+    count: upcomingCount,
+    store: 'upcoming',
+  },
+  {
+    name: important,
+    list: getFromLocalStorage('important'),
+    count: importantCount,
+    store: 'important',
+  },
 ];
 
-export { header, todoCounts, totalTodoCount, todoListArray };
+export { header, projects, todoCounts, totalTodoCount, todoListArray };

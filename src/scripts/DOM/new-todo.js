@@ -1,8 +1,9 @@
 import { Todo } from '../todo/todo';
 import { dialog } from './button';
 import { assignTodoList } from './assignTodo';
-import { header, todoListArray } from './assignTodoVar';
+import { header, projects } from './assignTodoVar';
 import { displayToDOM } from './display-todo';
+import { getFromLocalStorage } from './localStorage';
 
 export const newTodo = document.querySelector('#new-todo');
 
@@ -20,13 +21,8 @@ export function newTodoHandler() {
     priority: priority.value,
   });
   assignTodoList(userTodo);
-
-  todoListArray.forEach((todoObj) => {
-    if (todoObj.name.textContent == header.textContent) {
-      displayToDOM(todoObj.list);
-    }
-  });
-
+  header.textContent = projects.textContent;
+  displayToDOM(getFromLocalStorage('projects'));
   dialog.close();
   resetBtn.click();
 }
