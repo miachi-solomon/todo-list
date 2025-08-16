@@ -1,9 +1,9 @@
 import { saveArrToLocalStorage } from '../DOM/localStorage';
 
-export const allProjects = [];
-export const todayTodos = [];
-export const upcomingTodos = [];
-export const importantTodos = [];
+const allProjects = [];
+const todayTodos = [];
+const upcomingTodos = [];
+const importantTodos = [];
 
 saveArrToLocalStorage('projects', allProjects);
 saveArrToLocalStorage('today', todayTodos);

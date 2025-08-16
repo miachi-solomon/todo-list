@@ -11,6 +11,7 @@ import './scripts/DOM/assignTodo';
 import { displayToDOM } from './scripts/DOM/display-todo';
 import { updateTodoCount } from './scripts/DOM/assignTodo';
 import { getFromLocalStorage } from './scripts/DOM/localStorage';
+import '../src/scripts/todo/todo-lists';
 
 addBtn.addEventListener('mouseover', () => (addBtn.textContent = '+ Add'));
 
